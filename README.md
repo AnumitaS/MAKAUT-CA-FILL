@@ -10,6 +10,7 @@ The script automatically detects the root `MAKAUT_CA` directory and saves all ge
 
 ```text
 MAKAUT_CA/
+└── MAKAUT_Template.docx
 └── OUTPUT/
     └── <PROGRAMME>_<SUBJECT>_<YEAR>/
         ├── DOC/
