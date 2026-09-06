@@ -29,13 +29,13 @@ MAKAUT_CA/
 ## How to Run
 
 1. **Install required libraries**
-    ***pandas>=2.0.0***
-    ***openpyxl>=3.1.0***
-    ***openpyxl-image-loader>=1.0.5***
-    ***docxtpl>=0.16.0***
-    ***python-docx>=0.8.11***
-    ***comtypes>=1.2.0***
-    ***odfpy>=1.4.1***
+    * ***pandas>=2.0.0***
+    * ***openpyxl>=3.1.0***
+    * ***openpyxl-image-loader>=1.0.5***
+    * ***docxtpl>=0.16.0***
+    * ***python-docx>=0.8.11***
+    * ***comtypes>=1.2.0***
+    * ***odfpy>=1.4.1***
 
 3. **Execute the Script:**
    ```bash
