@@ -28,12 +28,21 @@ MAKAUT_CA/
 
 ## How to Run
 
-1. **Execute the Script:**
+1. **Install required libraries**
+    ***pandas>=2.0.0***
+    ***openpyxl>=3.1.0***
+    ***openpyxl-image-loader>=1.0.5***
+    ***docxtpl>=0.16.0***
+    ***python-docx>=0.8.11***
+    ***comtypes>=1.2.0***
+    ***odfpy>=1.4.1***
+
+3. **Execute the Script:**
    ```bash
    python SCRIPT.py
    ```
 
-2. **Enter Subject Metadata via Terminal Prompts:**
+4. **Enter Subject Metadata via Terminal Prompts:**
    * **Academic Year** *(e.g., 2026-27)*
    * **Semester** *(e.g., 5th)*
    * **Programme** *(e.g., B.Tech., ECE)*
@@ -44,7 +53,7 @@ MAKAUT_CA/
    * **Subject Teacher Name**
    * **Teacher Mobile Number**
 
-3. **Select Resource Files via GUI File Pickers:**
+5. **Select Resource Files via GUI File Pickers:**
    * **Word Template:** Select your `.docx` template file.
    * **Student Data File:** Select your `.xlsx`, `.ods`, or `.csv` data sheet.
    * **Teacher Signature Image:** *(Optional - click Cancel to skip)*
