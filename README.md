@@ -1,15 +1,39 @@
-# MAKAUT-CA-FILL 
+# MAKAUT-CA-FILL
 
 ## Overview
-This project helps you automate the creation of MAKAUT Continuous Assessment Mark Submission PDF files. You need to provide an Excel (`.xlsx`) or ODS (`.ods`) sheet containing obtained marks, names, and roll numbers of students using the exact column names supplied with this project.
+This project automates the generation of MAKAUT Continuous Assessment (CA) Mark Submission documents (DOCX) and PDF files. You need to provide an Excel (`.xlsx`), ODS (`.ods`), or CSV (`.csv`) sheet containing student marks, names, roll numbers, and optional signatures using column names compatible with the project template.
+
+---
+
+## Output Directory Structure
+The script automatically detects the root `MAKAUT_CA` directory and saves all generated documents into the following folder structure:
+
+```text
+MAKAUT_CA/
+└── OUTPUT/
+    └── <PROGRAMME>_<SUBJECT>_<YEAR>/
+        ├── DOC/
+        │   ├── StudentName_RollNumber_Subject.docx
+        │   └── ...
+        └── PDF/
+            ├── StudentName_RollNumber_Subject.pdf
+            └── ...
+```
+
+*Example Output Folder Path:*  
+`MAKAUT_CA/OUTPUT/BTech_ECE_Web_Technology_2026-27/DOC`  
+`MAKAUT_CA/OUTPUT/BTech_ECE_Web_Technology_2026-27/PDF`
+
+---
 
 ## How to Run
-1. Run `SCRIPT.py`:
+
+1. **Execute the Script:**
    ```bash
    python SCRIPT.py
    ```
 
-2. You will be prompted to enter the following information manually:
+2. **Enter Subject Metadata via Terminal Prompts:**
    * **Academic Year** *(e.g., 2026-27)*
    * **Semester** *(e.g., 5th)*
    * **Programme** *(e.g., B.Tech., ECE)*
@@ -20,14 +44,21 @@ This project helps you automate the creation of MAKAUT Continuous Assessment Mar
    * **Subject Teacher Name**
    * **Teacher Mobile Number**
 
-3. Next, select the required resource files via the file picker prompts:
-   * `template.docx` file
-   * Teacher signature image file
-   * College stamp image file
-   * Student data file (`.xlsx` or `.ods`)
+3. **Select Resource Files via GUI File Pickers:**
+   * **Word Template:** Select your `.docx` template file.
+   * **Student Data File:** Select your `.xlsx`, `.ods`, or `.csv` data sheet.
+   * **Teacher Signature Image:** *(Optional - click Cancel to skip)*
+   * **College Stamp Image:** *(Optional - click Cancel to skip)*
 
-> **Note:** The column names in your student data file must match the sample file provided in this repository (`subject_name/input/data_files.xlsx`), as they are tagged directly inside `SCRIPT.py`. You must select the correct files; otherwise, execution will fail.
+---
 
-## Output Directory
-Generated files will be saved in the directory structure:
-`root(MAKAUT_CA)/subject(CSE)/out/`
+## Requirements & Dependencies
+
+Install required Python packages before running the script:
+
+```bash
+pip install pandas openpyxl openpyxl-image-loader docxtpl python-docx comtypes odfpy
+```
+
+* **Windows OS:** Uses Microsoft Word (`comtypes`) for native DOCX to PDF conversion.
+* **Linux/macOS:** Requires **LibreOffice** installed for headless PDF conversion (`libreoffice --headless`).
