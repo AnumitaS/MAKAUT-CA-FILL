@@ -1,23 +1,33 @@
-# MAKAUT Continuous Assessment Document & PDF Generator
+# MAKAUT-CA-FILL 
 
-An automated, cross-platform tool designed to simplify the generation of Continuous Assessment (CA) mark submission documents for MAKAUT. It processes student mark sheets, renders populated Word templates (`.docx`), inserts relevant signatures or stamps, and converts the generated files into production-ready PDFs.
+## Overview
+This project helps you automate the creation of MAKAUT Continuous Assessment Mark Submission PDF files. You need to provide an Excel (`.xlsx`) or ODS (`.ods`) sheet containing obtained marks, names, and roll numbers of students using the exact column names supplied with this project.
 
----
+## How to Run
+1. Run `SCRIPT.py`:
+   ```bash
+   python SCRIPT.py
+   ```
 
-## Features
+2. You will be prompted to enter the following information manually:
+   * **Academic Year** *(e.g., 2026-27)*
+   * **Semester** *(e.g., 5th)*
+   * **Programme** *(e.g., B.Tech., ECE)*
+   * **Subject Name** *(e.g., Web Technology)*
+   * **Paper Code** *(e.g., OE-EC704A)*
+   * **UPID** *(e.g., 007716)*
+   * **Exam Date** *(e.g., 02/09/26)*
+   * **Subject Teacher Name**
+   * **Teacher Mobile Number**
 
-* **Cross-Platform Compatibility:** Runs on both **Windows** (using Microsoft Word) and **Ubuntu/Linux** (using LibreOffice headless rendering).
-* **Multi-Format Data Ingestion:** Supports `.xlsx`, `.ods`, and `.csv` input datasets.
-* **Interactive Native File Chooser:** File pickers allow you to select templates, mark sheets, signatures, and stamps.
-* **Automated Output Structuring:** Output files are created outside the input folder at `../out/doc/` and `../out/pdf/`.
-* **Standardized File Naming:** Output files follow the `[StudentName]_[RollNumber]_[Subject].docx` (and `.pdf`) pattern.
+3. Next, select the required resource files via the file picker prompts:
+   * `template.docx` file
+   * Teacher signature image file
+   * College stamp image file
+   * Student data file (`.xlsx` or `.ods`)
 
----
+> **Note:** The column names in your student data file must match the sample file provided in this repository (`subject_name/input/data_files.xlsx`), as they are tagged directly inside `SCRIPT.py`. You must select the correct files; otherwise, execution will fail.
 
-## Prerequisites
-
-### 1. Python Environment
-Ensure you have Python 3.8+ installed along with the required dependencies:
-
-```bash
-pip install pandas openpyxl openpyxl-image-loader docxtpl python-docx pyexcel-ods3 comtypes
+## Output Directory
+Generated files will be saved in the directory structure:
+`root(MAKAUT_CA)/subject(CSE)/out/`
