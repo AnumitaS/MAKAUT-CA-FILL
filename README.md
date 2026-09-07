@@ -1,6 +1,7 @@
 # MAKAUT-CA-FILL
 ## Tutorial video
 * **https://www.youtube.com/watch?v=lQmGZlvivZw**
+* [![Watch the video](https://img.youtube.com/vi/lQmGZlvivZw/maxresdefault.jpg)](https://www.youtube.com/watch?v=lQmGZlvivZw)
 
 ## Overview
 This project automates the generation of MAKAUT Continuous Assessment (CA) Mark Submission documents (DOCX) and PDF files. You need to provide an Excel (`.xlsx`), ODS (`.ods`), or CSV (`.csv`) sheet containing student marks, names, roll numbers, and optional signatures using column names compatible with the project template.
